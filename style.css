@@ -3,5 +3,10 @@
 .miBackground{
 	background: rgb(2,0,36);
 	background: linear-gradient(43deg, rgba(2,0,36,1) 0%, rgba(121,9,116,1) 31%, rgba(0,212,255,1) 95%);
-	height: 500px
+	height: 600px
 }
+
+.navbar-scrolled{
+	background-color: #fff;
+}
+
