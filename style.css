@@ -1,12 +1,246 @@
 
 
 .miBackground{
-	background: rgb(2,0,36);
-	background: linear-gradient(43deg, rgba(2,0,36,1) 0%, rgba(121,9,116,1) 31%, rgba(0,212,255,1) 95%);
-	height: 600px
+	background-color:blue;
+	height: 100vh
 }
 
 .navbar-scrolled{
 	background-color: #fff;
 }
+
+
+
+
+.css-typing p {
+  border-right: .15em solid white;
+  white-space: nowrap;
+  overflow: hidden;
+	color: white;
+	font-size: 5vh;
+}
+.css-typing p:nth-child(1) {
+  width: 12em;
+  -webkit-animation: type 3s steps(40, end);
+  animation: type 3s steps(40, end);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(2) {
+  width: 15em;
+  opacity: 0;
+  -webkit-animation: type2 3s steps(40, end);
+  animation: type2 3s steps(40, end);
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.css-typing p:nth-child(3) {
+  width: 20em;
+  opacity: 0;
+  -webkit-animation: type3 3s steps(20, end), blink .5s step-end infinite alternate;
+  animation: type3 3s steps(20, end), blink .5s step-end infinite alternate;
+  -webkit-animation-delay: 5s;
+  animation-delay: 5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid white;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  99.9% {
+    border-right: .15em solid white;
+  }
+  100% {
+    border: none;
+  }
+}
+
+@keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid white;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid white;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes type3 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@-webkit-keyframes blink {
+  50% {
+    border-color: tranparent;
+  }
+}
+.etiqueta_color{
+	color: #CD233D;
+}
+
+/* card */
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+.presentacion{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    margin: auto;
+    box-shadow: 0px 14px 32px 0px rgba(0,0,0,0.5);
+    border-radius: 7px;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color:aliceblue;
+    
+}
+
+
+
+
+.presentacion .img img{
+    margin: 30px;
+    border-radius: 2px;
+    height: 50%;
+
+ 
+} 
+.presentacion .img{
+    width: 25%;
+    /*background-color: fuchsia;*/
+    height: 85%;
+    padding-left: 10%;
+    
+}
+
+body{
+    background-image: url(img/fondorosa.jpg);
+    background-size: contain;
+    /*font-family:'Lobster', cursive;*/
+}
+
+.producto-info{
+    /*background-color:aqua;*/
+    height:80%;
+    width: 75%;
+    text-align:center;
+    padding: 10px;
+}
+
+.sociales .fab{
+    font-size:40px;
+    margin: 15px;
+}
+
+.sociales a{
+    width: 45px;
+    height: 45px;
+   text-decoration-line: none;
+    color:darkorchid;
+}
+
+.sociales a:hover{
+    background-color: darkorchid;
+    color:white;
+}
+
+.texto{
+    height: 70%;
+}
+.sociales{
+    /*background-color: pink;*/
+    position:static;
+    margin: 10%;
+}
+
+@media(max-width:820px){
+    .presentacion{
+        height: 80%;
+        width: 100%;
+        flex-direction: column;
+    }
+    .presentacion .img img{
+    margin: 20px;
+    border-radius: 1px;
+    
+ 
+}
+    .presentacion .img{
+    width: 100%;
+    background-color: fuchsia;
+    height: 85%;
+    
+}
+    .sociales{
+    background-color: yellow;
+    margin: 10%;    
+    }
+}
+
+
+/* fin card */
 
