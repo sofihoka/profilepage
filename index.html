@@ -15,7 +15,7 @@
     <header >
     <nav>
         <a id="me" href="#presentation">Me</a>
-        <a href="#experience">Experience</a>
+        <a href="#experience" onclick="startTyping();">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#">Contact</a>
     </nav>
@@ -36,15 +36,9 @@
             <div id="experience" class="section">
               <div id="frame">
               <div id="line" class="line">
-              <div>
-              <p class="typing"> &lt;/&gt 2022 ~ Java developer - Neuralsoft.</p>
-              </div>
-              <div>
-                <p class="typing">&lt;/&gt 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.</p>
-              </div>
-              <div>
-                <p class="typing">&lt;/&gt 2019 computer teacher - Fundacion Sadosky.</p>
-              </div>
+              <p class="typing"></p>
+                <p class="typing"></p>
+                <p class="typing"></p>
             </div>
             </div>
             </div>
@@ -71,7 +65,37 @@
     navMe.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofichan_1.svg'; });
     navMe.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofichanframe.svg'; }); 
 
-    const text = ["</> 2022 ~ Java developer - Neuralsoft.","</> 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.","</> 2019 computer teacher - Fundacion Sadosky."]
+    const texts = ["</> 2022 ~ Java developer - Neuralsoft.", "</> 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.", "</> 2019 computer teacher - Fundacion Sadosky."];
+    const paragraphs = document.querySelectorAll(".typing");
+    let currentParagraph = 0;
+
+    function typeEffect(text, element, callback) {
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          element.textContent += text.charAt(index);
+          index++;
+          setTimeout(type, 38); // Adjust speed here
+        } else {
+          if (callback) callback();
+        }
+      }
+
+      type();
+    }
+
+    function startTyping() {
+      if (currentParagraph < texts.length) {
+        typeEffect(texts[currentParagraph], paragraphs[currentParagraph], () => {
+          currentParagraph++;
+          startTyping();
+        });
+      }
+    }
+
+    
+
 
     </script>
   </body>

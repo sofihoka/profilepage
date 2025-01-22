@@ -92,7 +92,13 @@ main{
 }
 
 #hi{
-    color:#1D2088
+    color:#1D2088;
+    animation: grow  2s 1 alternate;
+}
+@keyframes grow  {
+    
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg) }
 }
 
 #skills img{
