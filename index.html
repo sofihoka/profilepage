@@ -14,8 +14,8 @@
   <body>
     <header >
     <nav>
-        <a id="me" href="#">Me</a>
-        <a href="#">Experience</a>
+        <a id="me" href="#presentation">Me</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#">Contact</a>
     </nav>
@@ -33,15 +33,25 @@
               <p id="resume">I'm a <Strong>software developer </Strong>with a degree obtained in 2019. Currently, I'm working as a Java developer at Neuralsoft.
                 I've also worked with PHP and I love JavaScript, especially for web development. I'm a responsible person who enjoys solving problems and is eager to keep learning about the programming world.</p>
             </div>
-            <div id="skills" class="section">
-              <img alt="javascript" id="javascript" src="imagen/js1.svg">
-              <img alt="php" src="imagen/php1.svg">
-              <img alt="java" src="imagen/java1.svg">
+            <div id="experience" class="section">
+              <div id="frame">
+              <div id="line" class="line">
+              <div>
+              <p class="typing"> &lt;/&gt 2022 ~ Java developer - Neuralsoft.</p>
+              </div>
+              <div>
+                <p class="typing">&lt;/&gt 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.</p>
+              </div>
+              <div>
+                <p class="typing">&lt;/&gt 2019 computer teacher - Fundacion Sadosky.</p>
+              </div>
+            </div>
+            </div>
             </div>
             <div id="skills" class="section">
-              <img alt="javascript" src="imagen/js1.svg">
-              <img alt="javascript" src="imagen/php1.svg">
-              <img alt="javascript" src="imagen/java1.svg">
+              <img alt="java" src="imagen/java1.svg">              
+              <img alt="php" src="imagen/php1.svg">
+              <img alt="javascript" id="javascript" src="imagen/js1.svg">
             </div>
             <div id="skills" class=" section">
               <img alt="javascript" src="imagen/js1.svg">
@@ -61,10 +71,7 @@
     navMe.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofichan_1.svg'; });
     navMe.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofichanframe.svg'; }); 
 
-    document.addEventListener('scroll', () => { 
-      const sections = document.querySelectorAll('.section'); 
-      sections.forEach(section => { const rect = section.getBoundingClientRect(); 
-        if (rect.top >= 0 && rect.bottom <= window.innerHeight) { window.location.hash = section.id; } });} );
+    const text = ["</> 2022 ~ Java developer - Neuralsoft.","</> 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.","</> 2019 computer teacher - Fundacion Sadosky."]
 
     </script>
   </body>
