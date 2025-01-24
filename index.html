@@ -15,7 +15,7 @@
     <header >
     <nav>
         <a id="me" href="#presentation">Me</a>
-        <a href="#experience" onclick="startTyping();">Experience</a>
+        <a href="#experience" >Experience</a>
         <a href="#skills">Skills</a>
         <a href="#">Contact</a>
     </nav>
@@ -44,7 +44,7 @@
             </div>
             <div id="skills" class="section">
               <img alt="java" src="imagen/java1.svg">              
-              <img alt="php" src="imagen/php1.svg">
+              <img alt="php" src="imagen/php.gif">
               <img alt="javascript" id="javascript" src="imagen/js1.svg">
             </div>
             <div id="skills" class=" section">
@@ -62,8 +62,8 @@
     <script> 
     const navMe = document.getElementById('me'); 
     const imgElement = document.getElementById('imagen'); 
-    navMe.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofichan_1.svg'; });
-    navMe.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofichanframe.svg'; }); 
+    navMe.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofiime.gif'; });
+    navMe.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofichan_1.svg'; }); 
 
     const texts = ["</> 2022 ~ Java developer - Neuralsoft.", "</> 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.", "</> 2019 computer teacher - Fundacion Sadosky."];
     const paragraphs = document.querySelectorAll(".typing");
@@ -94,7 +94,17 @@
       }
     }
 
-    
+    const frame = document.getElementById('frame');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startTyping();
+                    observer.unobserve(frame); // Dejar de observar después de que empiece a escribir
+                }
+            });
+        });
+
+        observer.observe(frame);
 
 
     </script>

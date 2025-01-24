@@ -1,0 +1,19 @@
+h1 {
+  font-size: 120%;
+}
+h1 p {
+  color: #222;
+}
+
+#title {
+  display: flex;
+  font-family: "Sofia", serif;
+  font-size: 50px;
+}
+#title #hi {
+  color: #1D2088;
+  animation: grow 2s 1 alternate;
+}
+#title #hi:hover {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

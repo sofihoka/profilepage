@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body{
+    min-height: 100%;
+    flex-direction: column;
+   background-color:#FDE8FF
+}
+
+nav{
+    margin-top: 3vh;
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom:8vh;
+    a{
+        margin-right: 9%;
+        font-family: "Poiret One", serif;
+        font-size: medium;
+        color: inherit; 
+        text-decoration:none;
+        position: relative;
+        &:after{
+            content: ''; 
+            position: absolute; 
+            left: 0; bottom: -2px; 
+            width: 0; height: 2px; 
+            color:#1D2088;
+            background-color: #1D2088; 
+            transition: width 0.5s ease;
+        }
+        &:hover{
+            color:#1D2088;
+            &:after{
+                width:100%;  
+            }
+        }
+    }
+}
+
+main{
+    display:flex;
+    
+}
+
+
+
+#ilustrator{
+    flex: 0 0 50vh;
+    img{
+        width: 80vh;
+        margin: 50px;
+    }
+    p{
+        font-family: "DM Sans", serif;
+
+    }
+}
+
+#section { overflow-y: auto; 
+    height: 84vh;}
+
+#presentation{
+    height: 90vh;
+}    
+.section { 
+    height: 100vh; }
+
+#javascript:hover {
+    content: url('/imagen/js2.svg');
+    width: 20vh;
+    margin: 50px;
+}
+
+#resume{
+    padding-right: 20vh;
+    font-size: small;
+}
+
+#title{
+    display:flex;
+    font-family: "Sofia", serif;
+    font-size:20px
+}
+
+#hi{
+    color:#1D2088;
+    animation: grow  2s 1 alternate;
+}
+
+#me:focus + #hi{
+    animation: grow  2s 1 alternate;
+}
+@keyframes grow  {
+    
+        0% { transform: rotate(0deg);}
+        100% { transform: rotate(360deg) }
+}
+
+#skills img{
+    width: 20vh;
+}
+#frame{
+    background-color: white;
+    padding: 30px;
+    border-radius: 26px;
+    margin-rigth: 10px;
+}
+.line { 
+    border-left: 2px solid #1D2088; 
+}
+
+#experience p{
+    font-family: "Reddit Mono", serif;
+    font-size:15px;
+    color:#1D2088; 
+    padding-bottom: 2%;
+    padding-left: 1%;
+    padding-top: 2%;
+}
+
+
+#footer{
+    display:flex;
+    justify-content: flex-end;
+    a{
+        img{
+            width:43px;
+        }
+    }
+}
