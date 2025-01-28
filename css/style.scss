@@ -44,6 +44,10 @@ nav{
     }
 }
 
+.space{
+    height: 12%;
+}
+
 main{
     display:flex;
     
@@ -64,7 +68,7 @@ main{
 }
 
 #section { overflow-y: auto; 
-    height: 84vh;}
+    height: 83vh;}
 
 #presentation{
     height: 90vh;
@@ -106,7 +110,7 @@ main{
 #skills img{
     width: 20vh;
 }
-#frame{
+.frame{
     background-color: white;
     padding: 30px;
     border-radius: 26px;
@@ -125,6 +129,19 @@ main{
     padding-top: 2%;
 }
 
+#contact{
+    img{
+        width: 36px;
+    }
+}
+
+#contact{
+    .frame{
+        a img{
+            display:block
+        }
+    }
+}
 
 #footer{
     display:flex;

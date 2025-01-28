@@ -14,10 +14,10 @@
   <body>
     <header >
     <nav>
-        <a id="me" href="#presentation">Me</a>
-        <a href="#experience" >Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#">Contact</a>
+        <a id="me" href="#presentation_">Me</a>
+        <a  href="#experience_" id="experienceId">Experience</a>
+        <a href="#skills_" id="skillsnav">Skills</a>
+        <a href="#contact_" id="contactid">Contact</a>
     </nav>
   </header>
     <main>
@@ -25,6 +25,7 @@
             <img id="imagen" alt="sofi" src="imagen/sofichanframe.svg">
         </div>
         <div id="section">
+          <div id="presentation_" class="space"></div>
             <div id="presentation" class="section">
               <div id="title">
                 <p id="hi">Hi! </p>
@@ -33,34 +34,44 @@
               <p id="resume">I'm a <Strong>software developer </Strong>with a degree obtained in 2019. Currently, I'm working as a Java developer at Neuralsoft.
                 I've also worked with PHP and I love JavaScript, especially for web development. I'm a responsible person who enjoys solving problems and is eager to keep learning about the programming world.</p>
             </div>
+            <div id="experience_" class="space"></div>
             <div id="experience" class="section">
-              <div id="frame">
-              <div id="line" class="line">
-              <p class="typing"></p>
-                <p class="typing"></p>
-                <p class="typing"></p>
+              <div class="frame" id="typing">
+                <div id="line" class="line">
+                  <p class="typing"></p>
+                  <p class="typing"></p>
+                  <p class="typing"></p>
+                </div>
+              </div>
             </div>
-            </div>
-            </div>
+            <div id="skills_" class="space"></div>
             <div id="skills" class="section">
               <img alt="java" src="imagen/java1.svg">              
               <img alt="php" src="imagen/php.gif">
               <img alt="javascript" id="javascript" src="imagen/js1.svg">
             </div>
-            <div id="skills" class=" section">
-              <img alt="javascript" src="imagen/js1.svg">
-              <img alt="javascript" src="imagen/php1.svg">
-              <img alt="javascript" src="imagen/java1.svg">
+            <div id="contact_" class="space"></div>
+            <div id="contact" class=" section">  
+              <div class="frame">    
+                <img alt="gmail" src="imagen/gmail.png">
+                  <p>sofihoka@gmail.com</p>
+                <a href="https://www.linkedin.com/in/sofia-hokama-9507ba171?">
+                  <img alt="linkedin" id="linkedin" src="imagen/linkedin.png">
+                  <p>Sofia Hokama</p>
+                </a>
+                <a href="SofiaHokamaCV.pdf" dowload="SofiaHokamaCV.pdf">
+                  <img alt="cv" src="imagen/cv.png">
+                  <p>CV dowload</p>
+                </a>
+              </div>
             </div>
-            <div id="footer">
-              <a href="#"><img alt="linkedin" src="imagen/linkedin.svg"></a>
-            </div>
+            
         </div>
     </main>
     
 
     <script> 
-    const navMe = document.getElementById('me'); 
+    const navMe = document.getElementById('contactid'); 
     const imgElement = document.getElementById('imagen'); 
     navMe.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofiime.gif'; });
     navMe.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofichan_1.svg'; }); 
@@ -94,17 +105,26 @@
       }
     }
 
-    const frame = document.getElementById('frame');
+    const typing = document.getElementById('typing');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                   imgElement.src = 'imagen/soficlick2.gif'; 
                     startTyping();
-                    observer.unobserve(frame); // Dejar de observar después de que empiece a escribir
+                    observer.unobserve(typing); // Dejar de observar después de que empiece a escribir
                 }
             });
         });
 
-        observer.observe(frame);
+        observer.observe(typing);
+
+      navExp = document.getElementById('experienceId'); 
+      navExp.addEventListener('mouseover', () => { imgElement.src = 'imagen/soficlick2.gif'; });
+      navExp.addEventListener('mouseout', () => { imgElement.src = 'imagen/soficlick3.svg'; }); 
+
+      skillsnav = document.getElementById('skillsnav'); 
+      skillsnav.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofitype.gif'; });
+      skillsnav.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofitype6.svg'; }); 
 
 
     </script>
