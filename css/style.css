@@ -102,6 +102,10 @@ main {
   animation: grow 2s 1 alternate;
 }
 
+#hi:active {
+  animation: grow 2s 1 alternate;
+}
+
 @keyframes grow {
   0% {
     transform: rotate(0deg);
