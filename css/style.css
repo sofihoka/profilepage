@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sofia&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap");
 html {
   scroll-behavior: smooth;
 }
@@ -12,15 +13,33 @@ body {
   background-color: #FDE8FF;
 }
 
+.displaynone {
+  display: none;
+}
+
+.displayblock {
+  display: block;
+}
+
+.english {
+  font-family: "Poiret One", serif;
+}
+
+.nihongo {
+  font-family: "M PLUS Rounded 1c", serif;
+  font-weight: 400;
+  font-style: normal;
+  height: 8vh;
+}
+
 nav {
   margin-top: 3vh;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 8vh;
+  margin-bottom: -2vh;
 }
 nav a {
   margin-right: 9%;
-  font-family: "Poiret One", serif;
   font-size: 3.5vh;
   color: inherit;
   text-decoration: none;
@@ -30,7 +49,7 @@ nav a:after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;
+  bottom: 33%;
   width: 0;
   height: 2px;
   color: #1D2088;
@@ -42,6 +61,37 @@ nav a:hover {
 }
 nav a:hover:after {
   width: 100%;
+}
+nav a img {
+  width: 5vh;
+}
+nav #languages {
+  position: relative;
+  display: inline-block;
+  margin-right: 5%;
+}
+nav #languages #language-menu {
+  border-radius: 6px;
+  display: none;
+  position: absolute;
+  left: -2vh;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+}
+nav #languages #language-menu li {
+  padding: 10px;
+  font-family: "Poiret One", serif;
+  cursor: pointer;
+  font-size: 3.5vh;
+  color: inherit;
+}
+nav #languages #language-menu li:hover {
+  background-color: #a4bbe4;
+}
+nav #languages:hover #language-menu, nav #languages:focus-within #language-menu {
+  display: block;
 }
 
 .space {

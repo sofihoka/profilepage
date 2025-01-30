@@ -6,18 +6,39 @@
     <title>Yamaguchi Sofia</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script type="text/javascript" src="js/fade.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
 	
   </head>  
   <body>
     <header >
-    <nav>
-        <a id="me" href="#presentation_">Me</a>
-        <a  href="#experience_" id="experienceId">Experience</a>
-        <a href="#skills_" id="skillsnav">Skills</a>
-        <a href="#contact_" id="contactid">Contact</a>
+    <nav class="english displaynone">
+        <a class="me" href="#presentation_">Me</a>
+        <a  href="#experience_" class="experienceId" onclick="starTypingOnclick('')">Experience</a>
+        <a href="#skills_" class="skillsnav">Skills</a>
+        <a href="#contact_" class="contactid">Contact</a>
+        <div id="languages">
+          <a id="language-selected">
+            <img alt="languages" src="imagen/translator.png">EN</a>
+          <ul id="language-menu">
+              <!-- <li onclick="selectLanguage('espaniol')">Español</li> -->
+              <li onclick="selectLanguage('english')">English</li>
+              <li onclick="selectLanguage('nihongo')">日本語</li>
+          </ul>
+        </div>
+    </nav>
+    <nav class="nihongo">
+      <a class="me" href="#presentation_">自己紹介</a>
+      <a  href="#experience_" class="experienceId" onclick="starTypingOnclick('')">​職歴</a>
+      <a href="#skills_" class="skillsnav">スキル</a>
+      <a href="#contact_" class="contactid">お問い合せ</a>
+      <div id="languages">
+        <a id="language-selected">
+          <img alt="languages" src="imagen/translator.png">JP</a>
+        <ul id="language-menu">
+             <!-- onclick="selectLanguage('espaniol')">Español</li> -->
+            <li onclick="selectLanguage('english')">English</li>
+            <li onclick="selectLanguage('nihongo')">日本語</li>
+        </ul>
+      </div> 
     </nav>
   </header>
     <main>
@@ -26,13 +47,25 @@
         </div>
         <div id="section">
           <div id="presentation_" class="space"></div>
-            <div id="presentation" class="section">
+            <div id="presentation" class="section english displaynone">
               <div id="title">
                 <p id="hi">Hi! </p>
                 <p >I'm Yamaguchi Sofia.</p>
               </div>    
-              <p id="resume">I'm a <Strong>software developer </Strong>with a degree obtained in 2019. Currently, I'm working as a Java developer at Neuralsoft.
+              <p id="resume">I'm a <Strong>software developer </Strong>with a degree obtained in 2019. 
+                I am currently in Kagoshima undergoing overseas training with Forever Co., Ltd.
+                I'm working as a Java developer at Neuralsoft.
                 I've also worked with PHP and I love JavaScript, especially for web development. I'm a responsible person who enjoys solving problems and is eager to keep learning about the programming world.</p>
+            </div>
+            <div id="presentation" class="section nihongo">
+              <div id="title">
+                <p id="hi">こんにちは、 </p>
+                <p >山口ソフィアと申します。</p>
+              </div>    
+              <p id="resume"><Strong>ソフトウェア開発者 </Strong>です。今は鹿児島に株式会社フォーエバーの海外研修です。
+                アルゼンチンITの会社NeuralsoftでJava 開発者として働いています。
+                PHP も使用したことがありますが、特に Web 開発では JavaScript が大好きです。 問題を解決とプログラミングが大好きです。
+              </p>
             </div>
             <div id="experience_" class="space"></div>
             <div id="experience" class="section">
@@ -71,13 +104,23 @@
     
 
     <script> 
-    const navMe = document.getElementById('contactid'); 
-    const imgElement = document.getElementById('imagen'); 
-    navMe.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofiime.gif'; });
-    navMe.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofichan_1.svg'; }); 
+    var languageid='nihongo'
+    const navMeElements = document.getElementsByClassName('contactid'); 
+    const imgElement = document.getElementById('imagen');  
+    for (let i = 0; i < navMeElements.length; i++) {
+        navMeElements[i].addEventListener('mouseover', () => { 
+            imgElement.src = 'imagen/sofiime.gif'; 
+        });
+        navMeElements[i].addEventListener('mouseout', () => { 
+            imgElement.src = 'imagen/sofichan_1.svg'; 
+        });
 
-    const texts = ["</> 2022 ~ Java developer - Neuralsoft.", "</> 2020 ~ 2021 Web desgin (PHP) - Rosario Sistema.", "</> 2019 computer teacher - Fundacion Sadosky."];
-    const paragraphs = document.querySelectorAll(".typing");
+    }
+
+    var text;
+    const english_texts = ["</> 2022 ~ Java developer - Neuralsoft.", "</> 2020 ~ 2021 Web desing (PHP) - Rosario Sistema.", "</> 2019 computer teacher - Fundacion Sadosky."];
+    const nihongo_texts = ["</> 2022 ~ Java 開発者 - Neuralsoft.", "</> 2020 ~ 2021 Web 開発者 (PHP) - Rosario Sistema.", "</> 2019 パソコンの先生 - Fundacion Sadosky."];
+  var paragraphs = document.querySelectorAll(".typing");
     let currentParagraph = 0;
 
     function typeEffect(text, element, callback) {
@@ -96,11 +139,17 @@
       type();
     }
 
-    function startTyping() {
+    function startTyping(languageid) {
+      
+      if(languageid=='nihongo'){
+        texts=nihongo_texts;
+      }else{
+        texts=english_texts;
+      }
       if (currentParagraph < texts.length) {
         typeEffect(texts[currentParagraph], paragraphs[currentParagraph], () => {
           currentParagraph++;
-          startTyping();
+          startTyping(languageid);
         });
       }
     }
@@ -110,7 +159,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                    imgElement.src = 'imagen/soficlick2.gif'; 
-                    startTyping();
+                    startTyping(languageid);
                     observer.unobserve(typing); // Dejar de observar después de que empiece a escribir
                 }
             });
@@ -118,14 +167,66 @@
 
         observer.observe(typing);
 
-      navExp = document.getElementById('experienceId'); 
-      navExp.addEventListener('mouseover', () => { imgElement.src = 'imagen/soficlick2.gif'; });
-      navExp.addEventListener('mouseout', () => { imgElement.src = 'imagen/soficlick3.svg'; }); 
+      function starTypingOnclick(currentLanguage){ 
+        if(currentLanguage==''){
+          currentLanguage=languageid;
+        }
+        paragraphs.forEach(node => {
+          node.textContent = ''; 
+        });
+        currentParagraph=0
+        startTyping(currentLanguage)
+      }   
+      navExp = document.getElementsByClassName('experienceId'); 
 
-      skillsnav = document.getElementById('skillsnav'); 
-      skillsnav.addEventListener('mouseover', () => { imgElement.src = 'imagen/sofitype.gif'; });
-      skillsnav.addEventListener('mouseout', () => { imgElement.src = 'imagen/sofitype6.svg'; }); 
+      for (let i = 0; i < navExp.length; i++) {
+        navExp[i].addEventListener('mouseover', () => { 
+            imgElement.src = 'imagen/soficlick2.gif'; 
+        });
+        navExp[i].addEventListener('mouseout', () => { 
+            imgElement.src = 'imagen/soficlick3.svg'; 
+        });
+      }
 
+      skillsnav = document.getElementsByClassName('skillsnav'); 
+      for (let i = 0; i < skillsnav.length; i++) {
+        skillsnav[i].addEventListener('mouseover', () => { 
+            imgElement.src = 'imagen/sofitype.gif'; 
+        });
+        skillsnav[i].addEventListener('mouseout', () => { 
+            imgElement.src = 'imagen/sofitype6.svg'; 
+        });
+      }
+
+      function selectLanguage(languageid){
+        starTypingOnclick(languageid);
+        
+        //espaniol, english, nihongo
+        if(languageid=="english"){
+          const englishClass = document.getElementsByClassName('english'); 
+          for (let i = 0; i < englishClass.length; i++) {
+           englishClass[i].classList.remove('displaynone');
+          }
+          const nihongoClass = document.getElementsByClassName('nihongo'); 
+          for (let i = 0; i < englishClass.length; i++) {
+            nihongoClass[i].classList.add('displaynone');
+
+          }
+        }
+
+        if(languageid=="nihongo"){
+          const englishClass = document.getElementsByClassName('english'); 
+          for (let i = 0; i < englishClass.length; i++) {
+           englishClass[i].classList.add('displaynone');
+          }
+          const nihongoClass = document.getElementsByClassName('nihongo'); 
+          for (let i = 0; i < englishClass.length; i++) {
+            nihongoClass[i].classList.remove('displaynone');
+
+          }
+          
+        }
+      }
 
     </script>
   </body>
