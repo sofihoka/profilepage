@@ -44,7 +44,7 @@
   </header>
     <main>
         <div id="ilustrator">
-            <img id="imagen" alt="sofi" src="imagen/sofichanframe.svg">
+            <img id="imagen" alt="sofi" src="imagen/sofiime.gif">
         </div>
         <div id="section">
           <div id="presentation_" class="space"></div>
@@ -136,7 +136,7 @@
 
     <script> 
     var languageid='nihongo'
-    const navMeElements = document.getElementsByClassName('contactid'); 
+    const navMeElements = document.getElementsByClassName('me'); 
     const imgElement = document.getElementById('imagen');  
     for (let i = 0; i < navMeElements.length; i++) {
         navMeElements[i].addEventListener('mouseover', () => { 
@@ -189,14 +189,24 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                   imgElement.src = 'imagen/soficlick2.gif'; 
+                  console.log(entry.target.id)
+                  if(entry.target.id=='typing'){
+                    imgElement.src = 'imagen/soficlick2.gif'; 
+                  }else if(entry.target.id=='skills'){
+                    imgElement.src = 'imagen/sofitype.gif'; 
+                  }else if(entry.target.id=='contact'){
+                    imgElement.src = 'imagen/sofichanframe.svg'; 
+                  }
                     startTyping(languageid);
-                    observer.unobserve(typing); // Dejar de observar después de que empiece a escribir
+                    //observer.unobserve(typing); // Dejar de observar después de que empiece a escribir
                 }
             });
         });
-
+        const skills = document.getElementById('skills');
+        const contact = document.getElementById('contact');
+        observer.observe(skills);
         observer.observe(typing);
+        observer.observe(contact);
 
       function starTypingOnclick(currentLanguage){ 
         if(currentLanguage==''){
