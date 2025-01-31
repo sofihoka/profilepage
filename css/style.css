@@ -208,10 +208,28 @@ main {
 }
 
 @media (max-width: 480px) {
+  footer {
+    background-color: white;
+    width: inherit;
+  }
+  #section {
+    height: 63vh;
+  }
+  header {
+    display: none;
+  }
+  body {
+    margin: 0;
+    width: 104%;
+  }
   main {
     display: table-cell;
   }
+  nav {
+    margin-top: 0vh;
+  }
   nav a {
+    margin-top: 4%;
     font-size: 14px;
   }
   #ilustrator img {

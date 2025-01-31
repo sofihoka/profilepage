@@ -100,8 +100,41 @@
             </div>
             
         </div>
+
+
     </main>
-    
+    <footer>
+      <nav class="english displaynone">
+        <a class="me" href="#presentation_">Me</a>
+        <a  href="#experience_" class="experienceId" onclick="starTypingOnclick('')">Experience</a>
+        <a href="#skills_" class="skillsnav">Skills</a>
+        <a href="#contact_" class="contactid">Contact</a>
+        <div id="languages">
+          <a id="language-selected">
+            <img alt="languages" src="imagen/translator.png">EN</a>
+          <ul id="language-menu">
+              <!-- <li onclick="selectLanguage('espaniol')">Español</li> -->
+              <li onclick="selectLanguage('english')">English</li>
+              <li onclick="selectLanguage('nihongo')">日本語</li>
+          </ul>
+        </div>
+    </nav>
+    <nav class="nihongo">
+      <a class="me" href="#presentation_">自己紹介</a>
+      <a  href="#experience_" class="experienceId" onclick="starTypingOnclick('')">​職歴</a>
+      <a href="#skills_" class="skillsnav">スキル</a>
+      <a href="#contact_" class="contactid">お問い合せ</a>
+      <div id="languages">
+        <a id="language-selected">
+          <img alt="languages" src="imagen/translator.png">JP</a>
+        <ul id="language-menu">
+             <!-- onclick="selectLanguage('espaniol')">Español</li> -->
+            <li onclick="selectLanguage('english')">English</li>
+            <li onclick="selectLanguage('nihongo')">日本語</li>
+        </ul>
+      </div> 
+    </nav>
+    </footer>
 
     <script> 
     var languageid='nihongo'
