@@ -223,7 +223,7 @@ main{
 
 @media (max-width: 480px) {
     body{
-        margin:4px;
+        margin:0;
     }
     main{
         display: table-cell;
@@ -237,9 +237,10 @@ main{
     
     #ilustrator{
         img {
-            width: 53vh;
+            width: 50vh;
             margin: 3%;
-        }        
+            padding-left: 1vh;
+        }       
     } 
     .space {
        height: 0;
@@ -271,5 +272,9 @@ main{
         p {
             font-size: 19px;
         }
+    }
+
+    .frame{
+        margin:1vh;
     }
 }
