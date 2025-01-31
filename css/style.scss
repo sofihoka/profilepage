@@ -19,9 +19,6 @@ body{
     display:none;
 }
 
-.displayblock{
-    display:block;
-}
 .english{
     
     font-family: "Poiret One", serif;
@@ -143,13 +140,21 @@ main{
 #resume{
     padding-right: 20vh;
     font-size: 2vh;
+    margin-top: 9vh;
 }
 
 #title{
+    margin-top: 5%;
     display:flex;
+    flex-wrap: wrap;
     font-family: "Sofia", serif;
-    font-size:5vh
+    font-size:5vh;
+    p{
+        margin: 0em;
+    }
 }
+
+
 
 #hi{
     color:#1D2088;
@@ -213,5 +218,54 @@ main{
         img{
             width:43px;
         }
+    }
+}
+
+@media (max-width: 480px) {
+    main{
+        display: table-cell;
+    }
+
+    nav{
+        a{
+            font-size: 14px;
+        }
+    }
+    
+    #ilustrator{
+        img {
+            width: 53vh;
+            margin: 3%;
+        }        
+    } 
+    .space {
+       height: 0;
+    }
+
+    #title{
+        margin-left: 7%;
+        font-size:4vh;
+        p{
+            margin: 0em;
+        }
+    }
+
+    #hi {
+        font-size: 73%;
+    }
+
+    #resume {
+        padding-right: 2vh;
+        margin-top: 4vh;
+        padding-left: 1vh;
+    }
+    #presentation {
+        height: 49vh;
+    }
+
+    #experience {p {
+        font-family: "Reddit Mono", serif;
+        font-size: 1em;
+    }
     }
 }

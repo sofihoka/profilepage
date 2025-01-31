@@ -198,11 +198,12 @@
         });
       }
 
-      function selectLanguage(languageid){
-        starTypingOnclick(languageid);
+      function selectLanguage(selectLanguageid){
+        languageid = selectLanguageid;
+        starTypingOnclick(selectLanguageid);
         
         //espaniol, english, nihongo
-        if(languageid=="english"){
+        if(selectLanguageid=="english"){
           const englishClass = document.getElementsByClassName('english'); 
           for (let i = 0; i < englishClass.length; i++) {
            englishClass[i].classList.remove('displaynone');
@@ -214,7 +215,7 @@
           }
         }
 
-        if(languageid=="nihongo"){
+        if(selectLanguageid=="nihongo"){
           const englishClass = document.getElementsByClassName('english'); 
           for (let i = 0; i < englishClass.length; i++) {
            englishClass[i].classList.add('displaynone');
