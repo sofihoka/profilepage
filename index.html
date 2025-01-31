@@ -9,7 +9,7 @@
 	
   </head>  
   <body>
-    <header >
+    <header id="navbar" style="display: none;">
     <nav class="english displaynone">
         <a class="me" href="#presentation_">Me</a>
         <a  href="#experience_" class="experienceId" onclick="starTypingOnclick('')">Experience</a>
@@ -228,6 +228,24 @@
           
         }
       }
+
+
+      //mobile nav scroll
+
+
+    let lastScrollTop = 0;
+    section.addEventListener("scroll", function() {
+      console.log("scrolleo")
+      const navbar = document.getElementById("navbar");
+      const scrollTop = section.pageYOffset || section.scrollTop;
+      console.log(scrollTop)
+      console.log(lastScrollTop)
+      if (scrollTop > lastScrollTop+10) {
+        navbar.style.display = "block";
+      } 
+
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Para evitar valores negativos
+    })
 
     </script>
   </body>

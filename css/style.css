@@ -208,6 +208,9 @@ main {
 }
 
 @media (max-width: 480px) {
+  body {
+    margin: 4px;
+  }
   main {
     display: table-cell;
   }
