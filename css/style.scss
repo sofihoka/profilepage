@@ -10,6 +10,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+footer{
+    display: none;
+}
+
 body{
     min-height: 100%;
     flex-direction: column;
@@ -71,6 +75,7 @@ nav{
         margin-right: 5%;
 
         #language-menu {
+            width: 15vh;
             border-radius: 6px;
             display: none;
             position: absolute;
@@ -79,6 +84,7 @@ nav{
             padding: 0;
             margin: 0;
             background-color: #ffffff;
+            
 
             li {
                     padding: 10px;
@@ -223,6 +229,7 @@ main{
 
 @media (max-width: 480px) {
     footer{
+        display: block;
         background-color: white;
         width: inherit;
     }
@@ -236,7 +243,6 @@ main{
     }
     body{
         margin:0;
-        width: 104%;
     }
     main{
         display: table-cell;
@@ -248,13 +254,19 @@ main{
             margin-top: 4%;
             font-size: 14px;
         }
+        #languages{
+            #language-menu{
+                bottom: 100%;
+                left: -7vh;
+            }
+        }
     }
     
     #ilustrator{
         img {
-            width: 50vh;
+            max-width: 38vh;
             margin: 3%;
-            padding-left: 1vh;
+            padding-left: 7vh;
         }       
     } 
     .space {
@@ -280,7 +292,7 @@ main{
         padding-left: 2vh;
     }
     #presentation {
-        height: 49vh;
+        height: 60vh;
     }
 
     #experience {
